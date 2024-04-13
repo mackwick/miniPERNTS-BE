@@ -1,16 +1,15 @@
 //DEPENDENCIES
 require("dotenv").config();
-const express = require("express");
 const PORT = process.env.PORT || 3000;
+import express from "express";
 
 const app = express();
 
-//ROUTER
-app.get("/", (res: any) => {
+//Root Route
+app.get("/", (req, res) => {
   res.send("Welcome to Pause");
 });
 
-//SERVER LISTENER
 app.listen(PORT, () => {
-  console.log(`I'm listening on port ${PORT}.`);
+  console.log(`I'm listening on port ${PORT}`);
 });
